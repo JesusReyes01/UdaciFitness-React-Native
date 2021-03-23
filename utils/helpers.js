@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 import { FontAwesome, MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons'
-import { white } from '.colors'
+import { white } from './colors'
 
 export function isBetween (num, x, y) {
     if (num >= x && num <= y) {
@@ -139,7 +139,7 @@ export function isBetween (num, x, y) {
         }
     }
 
-    return type metric === 'undefined'
+    return typeof metric === 'undefined'
         ? info 
         : info[metric]
   }
