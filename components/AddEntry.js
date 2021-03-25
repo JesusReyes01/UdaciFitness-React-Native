@@ -7,7 +7,7 @@ import { render } from 'react-dom'
         render() {
             return (
                 <View>
-                    <Text>Add Entry</Text>
+                    {getMetricMetaInfo('sleep').getIcon()}
                 </View>
             )
         }
