@@ -5,6 +5,7 @@ export default function UdaciSlider () {
     return(
         <View>
             <Text>UdaciSlider</Text>
+            <Text>Random</Text>
         </View>
     )
 }
