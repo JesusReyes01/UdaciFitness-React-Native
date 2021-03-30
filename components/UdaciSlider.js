@@ -6,7 +6,7 @@ export default function UdaciSlider ({ max, unit, step, value, onChange }) {
     return(
         <View style={styles.row}>
             <Slider
-                style={{flex:1}}
+                style={{flex: 1}}
                 step={step}
                 value={value}
                 maximumValue={max}
