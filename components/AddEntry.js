@@ -3,7 +3,7 @@ import { View, TouchableOpacity, Text, Platform, StyleSheet } from 'react-native
 import { getMetricMetaInfo, timeToString, getDailyReminderValue } from '../utils/helpers'
 import UdaciSlider from './UdaciSlider'
 import UdaciStepper from './UdaciStepper'
-import DateHeader from './DateHeader'
+//import DateHeader from './DateHeader'
 import { Ionicons } from '@expo/vector-icons'
 import TextButton from './TextButton'
 import { submitEntry, removeEntry } from '../utils/api'
@@ -102,7 +102,7 @@ class AddEntry extends Component {
     }
     return (
       <View style={styles.container}>
-        <DateHeader date={(new Date()).toLocaleDateString()}/>
+        {/* <DateHeader date={(new Date()).toLocaleDateString()}/> */}
         {Object.keys(metaInfo).map((key) => {
           const { getIcon, type, ...rest } = metaInfo[key]
           const value = this.state[key]
