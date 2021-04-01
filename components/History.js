@@ -27,7 +27,7 @@ class History extends Component {
         <View style={styles.item}>
             {today 
                 ?   <View>
-                        <DateHeader date={formattedDate} />
+                        {/* <DateHeader date={formattedDate} /> */}
                         <Text style={styles.noDataText}>{today}</Text>
                     </View>
                 :   <TouchableOpacity onPress={() => console.log("pressed!")}>
@@ -40,7 +40,7 @@ class History extends Component {
     renderEmptyDate(formattedDate) {
         return (
             <View style={styles.item}>
-                <DateHeader date={formattedDate}/>
+                {/* <DateHeader date={formattedDate}/>  */}
                 <Text style={styles.noDataText}>
                     You didn't log any data on this day.
                 </Text>
