@@ -7,6 +7,7 @@ import { gray } from '../utils/colors'
 export default function  MetricCard ({ date, metrics }) {
     return (
         <View>
+            {/* removed DateHeader as it classed with React native calendars */}
             {/* {date && <DateHeader date={date} />} */}
             {Object.keys(metrics).map((metric) => {
                 const { getIcon, displayName, unit, backgroundColor } = getMetricMetaInfo(metric)
