@@ -5,11 +5,11 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducer from './reducers'
 import History from './components/History'
-import { TabNavigator } from 'react-navigation'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { purple, white } from './utils/colors'
-import { FontAwesome, Ionicon } from '@expo/vector-icons'
+import { FontAwesome, Ionicons } from '@expo/vector-icons'
 
-const Tabs = TabNavigator({
+const Tabs = createBottomTabNavigator({
   History: {
     screen: History,
     navigationOptions: {
