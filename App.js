@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Platform } from 'react-native'
+import { View, Platform} from 'react-native'
 import AddEntry from './components/AddEntry'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
@@ -10,6 +10,16 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { NavigationContainer } from '@react-navigation/native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { purple, white } from './utils/colors'
+import Constants from 'expo-constants'
+import { StatusBar } from 'expo-status-bar';
+
+function UdaciStatusBar ({ backgroundColor, ...props }){
+  return(
+    <View style={{ backgroundColor, height: Constants.statusBarHeight }}>
+      <StatusBar translucent backgroundColor={backgroundColor} {...props} />   
+    </View>
+  )
+}
 
 const Tab = 
   Platform.OS === 'ios'
@@ -24,9 +34,10 @@ export default function App() {
 
   return (
     <Provider store={createStore(reducer)}>
+      <UdaciStatusBar backgroundColor={purple} style="light" />
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="AddEntry"
+          initialRouteName="Add Entry"
           screenOptions={({ route }) => ({
             tabBarIcon: ({ color, size }) => {
               let icon

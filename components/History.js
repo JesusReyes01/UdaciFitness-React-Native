@@ -6,9 +6,9 @@ import { timeToString, getDailyReminderValue } from '../utils/helpers'
 import { fetchCalendarResults } from '../utils/api'
 import { Agenda as UdaciFitnessCalendar } from "react-native-calendars";
 import { white } from '../utils/colors'
-import DateHeader from './DateHeader'
+// import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
-import { AppLoading } from 'expo-app-loading'
+// import { AppLoading } from 'expo-app-loading'
 
 class History extends Component {
     state = {
@@ -60,9 +60,9 @@ class History extends Component {
         const { entries } = this.props
         const { ready } = this.state
 
-        if (ready === false) {
-            return <AppLoading />
-        }
+        // if (ready === false) {
+        //     return <AppLoading />
+        // }
 
         return (
             // <Text>{JSON.stringify(this.props)}</Text>
