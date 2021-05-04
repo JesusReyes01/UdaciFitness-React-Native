@@ -71,24 +71,6 @@ const TabNavigatorConfig = {
   },
 };
 
-// const MainNavigator = createAppContainer(createStackNavigator({
-//   home: {
-//     screen: Tabs,
-//     navigationOptions: {
-//       header: null,
-//     },
-//   },
-//   EntryDetail: {
-//     screen: EntryDetail,
-//     navigationOptions: ({ navigation }) => ({
-//       headerTintColor: white,
-//       headerStyle: {
-//         backgroundColor: purple,
-//       },
-//     }),
-//   },
-// }));
-
 const Tab =
   Platform.OS === 'ios'
     ? createBottomTabNavigator()
@@ -182,7 +164,6 @@ export default function App() {
           <Tab.Screen name="History" component={History} />
         </Tab.Navigator> */}
       </NavigationContainer>
-      {/* <MainNavigator /> */}
     </Provider>
   )
 }
