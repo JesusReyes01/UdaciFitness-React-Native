@@ -8,7 +8,7 @@ import { Agenda as UdaciFitnessCalendar } from "react-native-calendars";
 import { white } from '../utils/colors'
 // import DateHeader from './DateHeader'
 import MetricCard from './MetricCard'
-// import { AppLoading } from 'expo-app-loading'
+import { AppLoading } from 'expo-app-loading'
 
 class History extends Component {
     state = {
@@ -31,24 +31,27 @@ class History extends Component {
           })))
     }
 
-    renderItem = ({ today, ...metrics }, formattedDate, key) => (
+    renderItem = ({ today, ...metrics }, key) => (
         <View style={styles.item}>
             {today 
                 ?   <View>
-                        {/* <DateHeader date={formattedDate} /> */}
                         <Text style={styles.noDataText}>{today}</Text>
                     </View>
-                :   <TouchableOpacity onPress={()=> this.props.navigation.navigate("Entry Detail", {entryId: key})}>
-                         <MetricCard metrics={metrics} date={formattedDate} /> 
+                 :  <TouchableOpacity
+                        onPress={() => this.props.navigation.navigate(
+                            'EntryDetail',
+                            { entryId: key }
+                            )}
+                    >
+                         <MetricCard metrics={metrics} /> 
                     </TouchableOpacity>
             }
         </View>
     )
     
-    renderEmptyDate(formattedDate) {
+    renderEmptyDate() {
         return (
             <View style={styles.item}>
-                {/* <DateHeader date={formattedDate}/>  */}
                 <Text style={styles.noDataText}>
                     You didn't log any data on this day.
                 </Text>
@@ -65,7 +68,6 @@ class History extends Component {
         // }
 
         return (
-            // <Text>{JSON.stringify(this.props)}</Text>
             <UdaciFitnessCalendar
                 items={entries}
                 renderItem={this.renderItem}
